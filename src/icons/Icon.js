@@ -28,7 +28,7 @@ export const  Icon=memo(({
     const [view,setView]=useState(false);
     const sizePexil=76;
 
-    console.log()
+
 
     useEffect(()=>{
         const a=setTimeout(()=>{setView(true);clearTimeout(a)},delay*1000)

@@ -40,7 +40,7 @@ export const Thanks=()=>{
     const[addedIcons,dispatch]=useReducer(reducer,{active:[],passive:["wainter","spring","summer","fall"],type:"add"});
     
     const getIconsCount=(a)=>{
-        console.log("jjjj");
+       
         return a?.length
     }
 
