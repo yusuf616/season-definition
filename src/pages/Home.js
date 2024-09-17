@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Icon } from "../seasons/Icon"
+import { Icon } from "../icons/Icon"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react";
 

@@ -5,32 +5,35 @@ import { Spring } from "./spring";
 import { Summer } from "./summer";
 import { Wainter } from "./wainter"
 import {motion} from "framer-motion"
+import { memo } from "react";
+import { Plus } from "./plus";
+import { Minus } from "./minus";
+import { Random } from "./random";
+import { Number } from "./number";
 
 
-export const Icon=({
+export const  Icon=memo(({
     name="wainter",
     size=1,
     fontLenth=1,
     animateY=0,
     animateX=0,
-    delay=0
+    delay=0,
+    hover=false,
+    onClick=()=>{},
+    num=0
 })=>{
 
 
     const [view,setView]=useState(false);
     const sizePexil=76;
 
+    console.log()
+
     useEffect(()=>{
         const a=setTimeout(()=>{setView(true);clearTimeout(a)},delay*1000)
         return ()=>{clearTimeout(a)}
     },[]);
-    
-    const Icons={
-        "wainter":<Wainter fontLenth={fontLenth}/>,
-        "summer":<Summer fontLenth={fontLenth}/>,
-        "fall":<Fall fontLenth={fontLenth}/>,
-        "spring":<Spring fontLenth={fontLenth}/>,
-    }
 
 
     const circleColors={
@@ -38,7 +41,24 @@ export const Icon=({
         "summer":"#FBD40E",
         "fall":"#F17528",
         "spring":"#47B94F",        
+        "plus":"#94fffa",
+        "minus":"#ff1515",
+        "random":"#835af4",
+        "number":"#920ad3"
     }
+ 
+    const Icons={
+        "wainter":<Wainter fontLenth={fontLenth}/>,
+        "summer":<Summer fontLenth={fontLenth}/>,
+        "fall":<Fall fontLenth={fontLenth}/>,
+        "spring":<Spring fontLenth={fontLenth}/>,
+        "plus":<Plus fontLenth={fontLenth} />,
+        "minus":<Minus fontLenth={fontLenth} />,
+        "random":<Random fontLenth={fontLenth}/>,
+        "number":<Number num={num} />
+    }
+
+
 
     const circleVariant={
         hidden:{
@@ -60,10 +80,7 @@ export const Icon=({
     }
 
 
-
-
-
-    return <div style={{ width:sizePexil*size,height:sizePexil*size ,display:"inline-block" }}>
+    return <motion.div onClick={onClick} {...hover?{whileHover:{scale:1.02},whileTap:{scale:.8}}:{}} style={{cursor:hover?"pointer":"", width:sizePexil*size,height:sizePexil*size ,display:"inline-block",userSelect:"none" }}>
         {view&&<div style={{display: "flex",alignItems: "center",justifyContent:"center",height:"100%",width:"100%"}} >
 
             <div className=" icon " style={{scale:(size*.2)+""}} >
@@ -76,6 +93,6 @@ export const Icon=({
                 </motion.div>
             </div>
         </div>}
-    </div>
+    </motion.div>
      
-} 
+})

@@ -1,7 +1,8 @@
 import {motion} from "framer-motion"
+import { memo } from "react"
 
 
-export const Spring=({
+export const Spring=memo(({
     fontLenth
 })=>{
     
@@ -38,4 +39,4 @@ export const Spring=({
             <motion.path variants={circleVariant} initial="hidden" animate="vizibel"  d="M0 0 C-1.42353524 3.33136597 -3.1335313 5.27664757 -5.875 7.625 C-6.55304688 8.21539063 -7.23109375 8.80578125 -7.9296875 9.4140625 C-12.38084078 12.82381388 -15.36709817 13.21665007 -21 13 C-21.8125 11.375 -21.8125 11.375 -22 9 C-18.89382704 4.29367734 -16.63419107 2.23952204 -11 1 C-7.23630464 0.35108701 -3.82416157 0 0 0 Z " fill="#EFF8EF" transform="translate(313,816)"/>
         </g>
     </svg>
-}
+})
