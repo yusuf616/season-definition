@@ -2,7 +2,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import { Home } from "./pages/Home";
 import { Thanks } from "./pages/thanks";
-import { Seasons } from "./pages/Seasons";
+import { Seasons } from "./pages/Seasons/Seasons";
 
 
 export const App=()=>{
