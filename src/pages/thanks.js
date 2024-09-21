@@ -37,7 +37,7 @@ export const Thanks=()=>{
         return state;
     }
 
-    const[addedIcons,dispatch]=useReducer(reducer,{active:[],passive:["wainter","spring","summer","fall"],type:"add"});
+    const[addedIcons,dispatch]=useReducer(reducer,{active:["winter","spring","summer","fall"],passive:[],type:"add"});
     
     const getIconsCount=(a)=>{
        
@@ -73,11 +73,11 @@ export const Thanks=()=>{
     return <div style={{ display:"flex" ,width:"100%",height:"100%",justifyContent:"center",alignItems:"center" }} className=" flex h-full w-full justify-center items-center   ">
         
         <div style={{textAlign:"center"}}>
-            <Icon hover={true} onClick={handleRandom} name="random" />
-            <Icon name="number" num={count} />
+            {/* <Icon hover={true} onClick={handleRandom} name="random" />
+            <Icon name="number" num={count} /> */}
             <div style={{display:"flex",height:100,justifyContent:"center"}} >
-                {addedIcons?.active?.map((icon,index)=><motion.div key={index} initial={{x:0,opacity:0.5}} animate={{x:0,opacity:1}} transition={{duration:1}}   ><Icon  delay={0} size={1} fontLenth={1.5} name={icon}/></motion.div>)}
-                <Icon onClick={handleClick} name={addedIcons.type==="add"?"plus":"minus"} fontLenth={1.3} hover={true}   />
+                {addedIcons?.active?.map((icon,index)=><motion.div key={index} initial={{x:-100,opacity:0}} animate={{x:0,opacity:1}} transition={{duration:0.4,delay:index*0.4}}   ><Icon  delay={index*0.4} size={1} fontLenth={1.5} name={icon}/></motion.div>)}
+                {/* <Icon onClick={handleClick} name={addedIcons.type==="add"?"plus":"minus"} fontLenth={1.3} hover={true}   /> */}
                 
             </div>
             <div  style={{ fontSize:"30px",color:"#eee" }}  >

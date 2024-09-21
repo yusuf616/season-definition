@@ -3,7 +3,7 @@ import "../styles/icons.css"
 import { Fall } from "./fall";
 import { Spring } from "./spring";
 import { Summer } from "./summer";
-import { Wainter } from "./wainter"
+import { Winter } from "./winter"
 import {motion} from "framer-motion"
 import { memo } from "react";
 import { Plus } from "./plus";
@@ -13,7 +13,7 @@ import { Number } from "./number";
 
 
 export const  Icon=memo(({
-    name="wainter",
+    name="winter",
     size=1,
     fontLenth=1,
     animateY=0,
@@ -37,7 +37,7 @@ export const  Icon=memo(({
 
 
     const circleColors={
-        "wainter":"#2EAEE2",
+        "winter":"#2EAEE2",
         "summer":"#FBD40E",
         "fall":"#F17528",
         "spring":"#47B94F",        
@@ -48,7 +48,7 @@ export const  Icon=memo(({
     }
  
     const Icons={
-        "wainter":<Wainter fontLenth={fontLenth}/>,
+        "winter":<Winter fontLenth={fontLenth}/>,
         "summer":<Summer fontLenth={fontLenth}/>,
         "fall":<Fall fontLenth={fontLenth}/>,
         "spring":<Spring fontLenth={fontLenth}/>,

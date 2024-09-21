@@ -26,7 +26,7 @@ export const Home=()=>{
     },[]);
 
     const icons={
-        "wainter":{
+        "winter":{
             animateX:-.5,
             animateY:-.5
         },

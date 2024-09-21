@@ -2,7 +2,7 @@ import {motion} from "framer-motion"
 import { memo } from "react"
 
 
-export const Wainter=memo(({
+export const Winter=memo(({
     fontLenth
 })=>{
 
